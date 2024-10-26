@@ -34,4 +34,10 @@ class AssesmentApplicationTests {
 		assertEquals(33,addition);
 	}
 
+	@Test
+	void testStringCalculatorForBigNewLineString() {
+		int addition = stringCalculator.add("1\n2,3");
+		assertEquals(6,addition);
+	}
+
 }
