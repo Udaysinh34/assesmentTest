@@ -11,9 +11,15 @@ class AssesmentApplicationTests {
 	StringCalculator stringCalculator = new StringCalculator();
 
 	@Test
-	void testStringCalculator() {
+	void testStringCalculatorForSimpleString() {
 		int addition = stringCalculator.add("1,2");
 		assertEquals(3,addition);
+	}
+
+	@Test
+	void testStringCalculatorForEmptyString() {
+		int addition = stringCalculator.add("");
+		assertEquals(0,addition);
 	}
 
 }
