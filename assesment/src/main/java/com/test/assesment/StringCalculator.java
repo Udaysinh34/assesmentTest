@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class StringCalculator {
 
-    int add(String numbers){
+    int add(String numbers) throws Exception{
         int addition = 0;
         int stringLength = numbers.length();
         if (stringLength != 0){
@@ -23,6 +23,25 @@ public class StringCalculator {
             for(int i=0;i<stringLength;i++){
 
                 if(numbers.charAt(i) != check){
+                    if (numbers.charAt(i) == '-'){
+                        boolean condition = true;
+                        String negativeNumber = new String();
+                        while(condition){
+                            if(i<stringLength){
+                                if(numbers.charAt(i) != check){
+                                    negativeNumber = negativeNumber + String.valueOf(numbers.charAt(i));
+                                    i++;
+                                }else{
+                                    condition = false;
+                                }
+                            }else{
+                                condition = false;
+                            }
+
+                        }
+
+                        throw new Exception("negative numbers not allowed "+negativeNumber);
+                    }
                     numString = numString + (String.valueOf(numbers.charAt(i)));
                 } else {
                     addition = addition + Integer.parseInt( numString);
