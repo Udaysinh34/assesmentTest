@@ -40,4 +40,10 @@ class AssesmentApplicationTests {
 		assertEquals(6,addition);
 	}
 
+	@Test
+	void testStringCalculatorForDelimerString() {
+		int addition = stringCalculator.add("//;\n1;2");
+		assertEquals(3,addition);
+	}
+
 }
