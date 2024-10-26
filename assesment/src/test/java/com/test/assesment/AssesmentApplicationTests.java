@@ -28,4 +28,10 @@ class AssesmentApplicationTests {
 		assertEquals(6,addition);
 	}
 
+	@Test
+	void testStringCalculatorForBigNumbersString() {
+		int addition = stringCalculator.add("11,22");
+		assertEquals(33,addition);
+	}
+
 }
