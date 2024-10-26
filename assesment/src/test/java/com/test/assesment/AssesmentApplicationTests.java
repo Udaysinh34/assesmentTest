@@ -22,4 +22,10 @@ class AssesmentApplicationTests {
 		assertEquals(0,addition);
 	}
 
+	@Test
+	void testStringCalculatorForSingleString() {
+		int addition = stringCalculator.add("6");
+		assertEquals(6,addition);
+	}
+
 }
